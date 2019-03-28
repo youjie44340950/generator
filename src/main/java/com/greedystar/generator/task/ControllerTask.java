@@ -28,7 +28,7 @@ public class ControllerTask extends AbstractTask {
         // 生成Controller填充数据
         System.out.println("Generating " + className + "Controller.java");
         Map<String, String> controllerData = new HashMap<>();
-        controllerData.put("BasePackageName", ConfigUtil.getConfiguration().getPackageName());
+        controllerData.put("BasePackageName", ConfigUtil.getConfiguration().getPackageName().getController().split(" ")[1]);
         controllerData.put("ControllerPackageName", ConfigUtil.getConfiguration().getPath().getController());
         if (StringUtil.isBlank(ConfigUtil.getConfiguration().getPath().getInterf())) {
             controllerData.put("ServicePackageName", ConfigUtil.getConfiguration().getPath().getService());
@@ -37,10 +37,11 @@ public class ControllerTask extends AbstractTask {
         }
         controllerData.put("EntityPackageName", ConfigUtil.getConfiguration().getPath().getEntity());
         controllerData.put("Author", ConfigUtil.getConfiguration().getAuthor());
+        controllerData.put("description", ConfigUtil.getConfiguration().getDescription());
         controllerData.put("Date", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         controllerData.put("ClassName", className);
         controllerData.put("EntityName", StringUtil.firstToLowerCase(className));
-        String filePath = FileUtil.getSourcePath() + StringUtil.package2Path(ConfigUtil.getConfiguration().getPackageName()) + StringUtil.package2Path(ConfigUtil.getConfiguration().getPath().getController());
+        String filePath = StringUtil.package2Path(ConfigUtil.getConfiguration().getPackageName().getController().replaceAll(" ","")) + StringUtil.package2Path(ConfigUtil.getConfiguration().getPath().getController());
         String fileName = className + "Controller.java";
         // 生成Controller文件
         FileUtil.generateToJava(FreemarketConfigUtils.TYPE_CONTROLLER, controllerData, filePath + fileName);

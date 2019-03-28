@@ -1,13 +1,16 @@
 db:
-  url:
-  username:
-  password:
+  url: jdbc:mysql://172.16.10.20:3306/saas-manage-dev?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+  username: root
+  password: root
 author: unknown
 packageName:
+  controller: E:\chedaiworkspan\saas-manage\manage-rest\src\main\java\ com.cnzhcf.saas.manage.
+  service: E:\chedaiworkspan\saas-manage\manage-handler\src\main\java\ com.cnzhcf.saas.manage.
+  interf: E:\chedaiworkspan\saas-manage\manage-handler\src\main\java\ com.cnzhcf.saas.manage.
 path:
-  controller: controller
-  service: service.impl
-  interf: service
+  controller: rest
+  service: handler.impl
+  interf: handler
   dao: dao
-  entity: entity
+  entity: domain
   mapper: mappers

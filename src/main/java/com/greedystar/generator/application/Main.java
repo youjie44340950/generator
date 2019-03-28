@@ -11,9 +11,6 @@ import com.greedystar.generator.invoker.base.Invoker;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        single();
-    }
 
     public static void many2many() {
         Invoker invoker = new Many2ManyInvoker.Builder()
@@ -39,10 +36,10 @@ public class Main {
         invoker.execute();
     }
 
-    public static void single() {
+    public static void single(String name ,String className) {
         Invoker invoker = new SingleInvoker.Builder()
-                .setTableName("user")
-                .setClassName("User")
+                .setTableName(name)
+                .setClassName(className)
                 .build();
         invoker.execute();
     }

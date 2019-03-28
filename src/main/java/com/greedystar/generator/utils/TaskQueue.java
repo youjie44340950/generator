@@ -26,17 +26,17 @@ public class TaskQueue {
             taskQueue.add(new InterfaceTask(className));
         }
         if (!StringUtil.isBlank(ConfigUtil.getConfiguration().getPath().getDao())) {
-            taskQueue.add(new DaoTask(className));
+//            taskQueue.add(new DaoTask(className));
         }
     }
 
     public void initSingleTasks(String className, String tableName, List<ColumnInfo> tableInfos) {
         initCommonTasks(className);
         if (!StringUtil.isBlank(ConfigUtil.getConfiguration().getPath().getEntity())) {
-            taskQueue.add(new EntityTask(className, tableInfos));
+//            taskQueue.add(new EntityTask(className, tableInfos));
         }
         if (!StringUtil.isBlank(ConfigUtil.getConfiguration().getPath().getMapper())) {
-            taskQueue.add(new MapperTask(className, tableName, tableInfos));
+//            taskQueue.add(new MapperTask(className, tableName, tableInfos));
         }
     }
 

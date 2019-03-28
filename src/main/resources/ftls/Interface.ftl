@@ -1,27 +1,22 @@
 package ${BasePackageName}${InterfacePackageName};
 
 import ${BasePackageName}${EntityPackageName}.${ClassName};
-
-import java.util.List;
+import com.cnzhcf.paas.commons.util.Response;
 
 /**
  * Author ${Author}
  * Date  ${Date}
  */
-public interface ${ClassName}Service {
+public interface ${ClassName}Handler {
 
-    public ${ClassName} get(String id);
+    Response get(Long id);
 
-    public List<${ClassName}> findList(${ClassName} ${EntityName});
+    Response getPageList(Integer pageIndex, Integer pageSize,${ClassName} ${EntityName});
 
-    public List<${ClassName}> findAllList();
+    Response insert(${ClassName} ${EntityName});
 
-    public int insert(${ClassName} ${EntityName});
+    Response update(${ClassName} ${EntityName});
 
-    public int insertBatch(List<${ClassName}> ${EntityName}s);
-
-    public int update(${ClassName} ${EntityName});
-
-    public int delete(${ClassName} ${EntityName});
+    Response updateEnable(Long id);
 
 }

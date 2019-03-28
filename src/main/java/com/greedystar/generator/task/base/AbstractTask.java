@@ -79,9 +79,9 @@ public abstract class AbstractTask implements Serializable {
 
     @Deprecated
     protected void createFilePathIfNotExists(String filePath) {
-        if (!StringUtil.isBlank(ConfigUtil.getConfiguration().getPackageName())) { // 用户配置了包名，不进行检测
-            return;
-        }
+//        if (!StringUtil.isBlank(ConfigUtil.getConfiguration().getPackageName())) { // 用户配置了包名，不进行检测
+//            return;
+//        }
         File file = new File(filePath);
         if (!file.exists()) { // 检测文件路径是否存在，不存在则创建
             file.mkdir();

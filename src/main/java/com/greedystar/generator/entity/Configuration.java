@@ -8,9 +8,18 @@ import java.io.Serializable;
  */
 public class Configuration implements Serializable {
     private String author;
-    private String packageName;
+    private String description;
+    private PackageName packageName;
     private Path path;
     private Db db;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getAuthor() {
         return author;
@@ -20,11 +29,11 @@ public class Configuration implements Serializable {
         this.author = author;
     }
 
-    public String getPackageName() {
-        return packageName == null ? "" : packageName + ".";
+    public PackageName getPackageName() {
+        return packageName;
     }
 
-    public void setPackageName(String packageName) {
+    public void setPackageName(PackageName packageName) {
         this.packageName = packageName;
     }
 
@@ -82,6 +91,77 @@ public class Configuration implements Serializable {
             this.password = password;
         }
     }
+
+    public static class PackageName {
+        private String controller;
+        private String service;
+        private String interf;
+        private String dao;
+        private String entity;
+        private String mapper;
+
+        public PackageName() {
+        }
+
+        public PackageName(String controller, String service, String interf,String dao, String entity, String mapper) {
+            this.controller = controller;
+            this.service = service;
+            this.interf = interf;
+            this.dao = dao;
+            this.entity = entity;
+            this.mapper = mapper;
+        }
+
+        public String getController() {
+            return controller == null ? "" : controller;
+        }
+
+        public void setController(String controller) {
+            this.controller = controller;
+        }
+
+        public String getService() {
+            return service == null ? "" : service;
+        }
+
+        public void setService(String service) {
+            this.service = service;
+        }
+
+        public String getInterf() {
+            return interf;
+        }
+
+        public void setInterf(String interf) {
+            this.interf = interf;
+        }
+
+        public String getDao() {
+            return dao == null ? "" : dao;
+        }
+
+        public void setDao(String dao) {
+            this.dao = dao;
+        }
+
+        public String getEntity() {
+            return entity == null ? "" : entity;
+        }
+
+        public void setEntity(String entity) {
+            this.entity = entity;
+        }
+
+        public String getMapper() {
+            return mapper == null ? "" : mapper;
+        }
+
+        public void setMapper(String mapper) {
+            this.mapper = mapper;
+        }
+
+    }
+
 
     public static class Path {
         private String controller;

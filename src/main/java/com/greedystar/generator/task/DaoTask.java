@@ -26,18 +26,18 @@ public class DaoTask extends AbstractTask {
     @Override
     public void run() throws IOException, TemplateException {
         // 生成Dao填充数据
-        System.out.println("Generating " + className + "Dao.java");
-        Map<String, String> daoData = new HashMap<>();
-        daoData.put("BasePackageName", ConfigUtil.getConfiguration().getPackageName());
-        daoData.put("DaoPackageName", ConfigUtil.getConfiguration().getPath().getDao());
-        daoData.put("EntityPackageName", ConfigUtil.getConfiguration().getPath().getEntity());
-        daoData.put("Author", ConfigUtil.getConfiguration().getAuthor());
-        daoData.put("Date", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-        daoData.put("ClassName", className);
-        daoData.put("EntityName", StringUtil.firstToLowerCase(className));
-        String filePath = FileUtil.getSourcePath() + StringUtil.package2Path(ConfigUtil.getConfiguration().getPackageName()) + StringUtil.package2Path(ConfigUtil.getConfiguration().getPath().getDao());
-        String fileName = className + "Dao.java";
-        // 生成dao文件
-        FileUtil.generateToJava(FreemarketConfigUtils.TYPE_DAO, daoData, filePath + fileName);
+//        System.out.println("Generating " + className + "Dao.java");
+//        Map<String, String> daoData = new HashMap<>();
+//        daoData.put("BasePackageName", ConfigUtil.getConfiguration().getPackageName());
+//        daoData.put("DaoPackageName", ConfigUtil.getConfiguration().getPath().getDao());
+//        daoData.put("EntityPackageName", ConfigUtil.getConfiguration().getPath().getEntity());
+//        daoData.put("Author", ConfigUtil.getConfiguration().getAuthor());
+//        daoData.put("Date", new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+//        daoData.put("ClassName", className);
+//        daoData.put("EntityName", StringUtil.firstToLowerCase(className));
+//        String filePath = FileUtil.getSourcePath() + StringUtil.package2Path(ConfigUtil.getConfiguration().getPackageName()) + StringUtil.package2Path(ConfigUtil.getConfiguration().getPath().getDao());
+//        String fileName = className + "Dao.java";
+//        // 生成dao文件
+//        FileUtil.generateToJava(FreemarketConfigUtils.TYPE_DAO, daoData, filePath + fileName);
     }
 }
