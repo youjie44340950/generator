@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2019/3/2816:56
  */
 public class MyBatisGeneratorRun {
-    public static void main(String[] args) throws Exception{
+    public static void start() throws Exception{
         MyBatisGeneratorRun app = new MyBatisGeneratorRun();
 
         System.out.println(app.getClass().getResource("/").getPath());
